@@ -2,16 +2,17 @@
   reading potentiometer (bien tro)
 */
 
-int ledPin = 9;
-int controlPin = 3;
+int ledPin = 13;
+int pemPin = 5;
 int val = 0;
 
 void setup() {
   pinMode(ledPin, OUTPUT);
+  Serial.begin(9600);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  val = analogRead(controlPin);
-  analogWrite(ledPin, val / 4);
+  val = analogRead(pemPin);
+  analogWrite(ledPin, val/4);
+  Serial.println(val);
 }
